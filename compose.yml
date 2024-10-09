@@ -1,6 +1,6 @@
 services:
   poetry:
-    image: deanayalon/poetry
+    image: deanayalon/poetry:no-cache
     build: 
       tags: [ghcr.io/deanayalon/poetry]
       platforms:
