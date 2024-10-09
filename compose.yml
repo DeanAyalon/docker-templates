@@ -1,8 +1,16 @@
 services:
   poetry:
-    image: deanayalon/poetry:remove-cache
+    image: deanayalon/poetry
     build: 
       tags: [ghcr.io/deanayalon/poetry]
       platforms:
         - linux/amd64
         - linux/arm64/v8
+
+  dev:
+    image: deanayalon/poetry:dev
+    build: .
+    develop:
+      watch:
+        - path: dockerfile
+          action: rebuild
