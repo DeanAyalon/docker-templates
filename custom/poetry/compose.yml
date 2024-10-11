@@ -1,0 +1,19 @@
+services:
+  # docker compose build
+  build:
+    image: deanayalon/poetry
+    build: 
+      tags: [ghcr.io/deanayalon/poetry]
+      platforms:
+        - linux/amd64
+        - linux/arm64/v8
+
+  # docker compose --profile dev watch
+  dev:
+    image: deanayalon/poetry:dev
+    build: .
+    profiles: [dev]
+    develop:
+      watch:
+        - path: dockerfile
+          action: rebuild
