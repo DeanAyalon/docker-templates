@@ -1,0 +1,4 @@
+services:
+  vcpkg: 
+    image: deanayalon/vcpkg
+    build: .
